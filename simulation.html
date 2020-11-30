@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Account Creation Simulation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Account Creation Simulation</h1>
+    </header>
+    <div class="container">
+        <div class="reference">
+            <p>Background Information: You are creating an account for a shopping website. The only required field is
+                username and you are free to include as many security measures
+                as you want. As a shopping website you should imagine that your financial information MAY be linked to
+                your
+                account, however, you would also have the ability
+                to remove it at any time. Furthermore, the shopping website would allow 3rd-party payment options that
+                would
+                need additional user engagement. Lastly,
+                information concerning various security measures is included and can be accessed by clicking on buttons
+                labeled "INFO", however, they are not required to be read.
+            </p>
+        </div>
+        <form action="/api" method="post">
+            <ul class="flex-outer">
+                <li>
+                    <label for="uname">Username (Required): </label>
+                    <input type="text" id="uname" name="username" maxlength="140">
+                </li>
+                <li>
+                    <label for="email">Email (Optional): </label>
+                    <input type="email" id="email" name="email">
+                </li>
+                <li>
+                    <label for="phone">Phone Number (Optional): </label>
+                    <input type="tel" id="phone" name="phone">
+                </li>
+                <li>
+                    <label for="password">Password (Optional): </label>
+                    <input type="text" id="uname" name="username" maxlength="140">
+                </li>
+                <li>
+                    <p>Multi-factor authentication (Check all that apply): </p>
+                    <ul class="flex-inner">
+                        <li>
+                            <input type="radio" id="none" name="mfa">
+                            <label for="none">None</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="skey" name="mfa">
+                            <label for="skey">Physical Security Key</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="app" name="mfa">
+                            <label for="app">App Authenticator</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="sms" name="mfa">
+                            <label for="sms">SMS</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="email" name="mfa">
+                            <label for="email">Email</label>
+                        </li>
+                    </ul>
+                </li>
+                <!--Security Questions
+                        Multi-factor authentication
+
+                        Drop-down information
+                        Feedback page-->
+
+            </ul>
+        </form>
+    </div>
+</body>

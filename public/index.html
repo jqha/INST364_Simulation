@@ -27,54 +27,195 @@
         </div>
         <form action="/api" method="post">
             <ul class="flex-outer">
+                <!--Username-->
                 <li>
                     <label for="uname">Username (Required): </label>
                     <input type="text" id="uname" name="username" maxlength="140">
+                </li>
+                <hr>
+                <!--Email-->
+                <li>
+                    <button type='button' onclick="toggleEmail()">INFO</button>
+                    <p id='email' style='display: none'>Emails can be useful in terms of security in several of ways.
+                        One way is that they can be used
+                        in order to recover a lost or stolen account. Another way is that companies can warn users about
+                        any suspicious activity or data breaches. One last way is that emails are sometimes used as a
+                        form of multi-factor authentication</p>
                 </li>
                 <li>
                     <label for="email">Email (Optional): </label>
                     <input type="email" id="email" name="email">
                 </li>
+                <hr>
+                <!--Phone-->
+                <li>
+                    <button type='button' onclick="togglePhone()">INFO</button>
+                    <p id='phone' style='display: none'>Phone numbers can be helpful in terms of security as you can
+                        receive SMS messages for multi-factor authentication</p>
+                </li>
                 <li>
                     <label for="phone">Phone Number (Optional): </label>
                     <input type="tel" id="phone" name="phone">
+                </li>
+                <hr>
+                <!--Password-->
+                <li>
+                    <button type='button' onclick="togglePassword()">INFO</button>
+                    <p id='password' style='display: none'>Passwords are a fundamental part of online security as they
+                        can lock unwanted individuals from accessing an account. Passwords can range in strength,
+                        depending on the characters used, complexity, and length. Generally, a strong password
+                        should be at least 8 - 12 characters, unique (not used for other accounts), have a mixture of
+                        both
+                        uppercase and lowercase letters, contain numbers, and contain at least one special character.
+                    </p>
                 </li>
                 <li>
                     <label for="password">Password (Optional): </label>
                     <input type="text" id="uname" name="username" maxlength="140">
                 </li>
+                <hr>
+                <!--MFA-->
+                <li>
+                    <button type='button' onclick="toggleMFA()">INFO</button>
+                    <p id='mfa' style='display: none'>Multi-factor authentication (MFA) is an additional security
+                        measure that
+                        can help keep unwanted intruders from accessing an account. It does this by making the owner of
+                        the account confirm their identity through a secondary source. Some of these sources include a
+                        security key, authentication app, SMS, and email. Although beneficial, MFA can be inconvenient,
+                        due to requiring an extra step for sign-in. Furthermore, the different authenticators have
+                        different pros and cons.<br><br>
+
+                        SMS and email are usually more easy to access, however there are larger
+                        risks if an individual gains access to either service. Furthermore, they have risks of phishing
+                        attacks.<br><br>
+
+                        Authenticator apps are also easy to access, however if an individual loses access of their
+                        phone, they may have trouble logging into their account. Additionally, phishing attacks may
+                        trick
+                        an individual into entering their authentication code.<br><br>
+
+                        A physical security key is the most secure, as it is not at risk of phishing attacks (security
+                        keys check the website/application being used in order to ensure they are legitimate. Although
+                        the most secure they are also the least convenient, due to requiring the user to have a physical
+                        object to sign-in.<br><br>
+
+                        Although an individual might think more authentication options will make them more secure, it is
+                        actually the opposite. An individual is better off with only one or two authentication options
+                        as more options may put user at higher risk.
+                    </p>
+                </li>
                 <li>
                     <p>Multi-factor authentication (Check all that apply): </p>
                     <ul class="flex-inner">
                         <li>
-                            <input type="radio" id="none" name="mfa">
+                            <input type="checkbox" id="none" name="none">
                             <label for="none">None</label>
                         </li>
                         <li>
-                            <input type="radio" id="skey" name="mfa">
+                            <input type="checkbox" id="skey" name="skey">
                             <label for="skey">Physical Security Key</label>
                         </li>
                         <li>
-                            <input type="radio" id="app" name="mfa">
+                            <input type="checkbox" id="app" name="app">
                             <label for="app">App Authenticator</label>
                         </li>
                         <li>
-                            <input type="radio" id="sms" name="mfa">
+                            <input type="checkbox" id="sms" name="sms">
                             <label for="sms">SMS</label>
                         </li>
                         <li>
-                            <input type="radio" id="email" name="mfa">
+                            <input type="checkbox" id="email" name="email">
                             <label for="email">Email</label>
                         </li>
                     </ul>
                 </li>
-                <!--Security Questions
-                        Multi-factor authentication
-
-                        Drop-down information
-                        Feedback page-->
-
+                <hr>
+                <!--Security Questions-->
+                <li>
+                    <button type='button' onclick="toggleSecure()">INFO</button>
+                    <p id='secure' style='display: none'>Security questions are mainly beneficial to account security in
+                        that they can help a user recover an account. Although they can be beneficial, they can also be
+                        harmful, as if a user's information is readily found online, an attacker may be able to easily
+                        find it and use it in order to gain access to the user's account.</p>
+                </li>
+                <li>
+                    <label for="sq1">Security Question 1: </label>
+                    <select name="sq1" id="sq1">
+                        <option value="none">None</option>
+                        <option value="pet">What was the name of your first pet?</option>
+                        <option value="city">What city were you born in?</option>
+                        <option value="car">What brand was your first car?</option>
+                        <option value="school">What elementary school did you go to?</option>
+                    </select>
+                    <input type="text" id="sa1" name="sa1" maxlength="140">
+                </li>
+                <li>
+                    <label for="sq1">Security Question 2: </label>
+                    <select name="sq1" id="sq1">
+                        <option value="none">None</option>
+                        <option value="cousin">What is your cousin's name?</option>
+                        <option value="movie">What is your favorite movie?</option>
+                        <option value="band">Who is your favorite music artist?</option>
+                        <option value="restaurant">What is your favorite restaurant?</option>
+                    </select>
+                    <input type="text" id="sa2" name="sa2" maxlength="140">
+                </li>
+                <li>
+                    <button type="submit" id="submit" name="submit">Create Account</button>
+                </li>
             </ul>
         </form>
     </div>
+
+    <script>
+        function toggleEmail() {
+            var text = document.getElementById("email");
+            if (text.style.display === "none") {
+                text.style.display = "block";
+            }
+            else {
+                text.style.display = "none";
+            }
+        }
+
+        function togglePhone() {
+            var text = document.getElementById("phone");
+            if (text.style.display === "none") {
+                text.style.display = "block";
+            }
+            else {
+                text.style.display = "none";
+            }
+        }
+
+        function togglePassword() {
+            var text = document.getElementById("password");
+            if (text.style.display === "none") {
+                text.style.display = "block";
+            }
+            else {
+                text.style.display = "none";
+            }
+        }
+
+        function toggleMFA() {
+            var text = document.getElementById("mfa");
+            if (text.style.display === "none") {
+                text.style.display = "block";
+            }
+            else {
+                text.style.display = "none";
+            }
+        }
+
+        function toggleSecure() {
+            var text = document.getElementById("secure");
+            if (text.style.display === "none") {
+                text.style.display = "block";
+            }
+            else {
+                text.style.display = "none";
+            }
+        }
+    </script>
 </body>

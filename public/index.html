@@ -25,7 +25,7 @@
                 labeled "INFO", however, they are not required to be read.
             </p>
         </div>
-        <form action="/api" method="post">
+        <form action="/submitted.html" method="get">
             <ul class="flex-outer">
                 <!--Username-->
                 <li>
@@ -35,10 +35,12 @@
                 <hr>
                 <!--Email-->
                 <li>
-                    <button type='button' onclick="toggleEmail()">INFO</button>
+                    <button type='button' onclick="toggleEmail()">EMAIL INFO</button>
                     <p id='email' style='display: none'>Emails can be useful in terms of security in several of ways.
                         One way is that they can be used
-                        in order to recover a lost or stolen account. Another way is that companies can warn users about
+                        in order to recover a lost or stolen account. This is important to ensure certain information is
+                        not lost, in the case of a shopping website, invoices and order information. Another way is that
+                        companies can warn users about
                         any suspicious activity or data breaches. One last way is that emails are sometimes used as a
                         form of multi-factor authentication</p>
                 </li>
@@ -49,7 +51,7 @@
                 <hr>
                 <!--Phone-->
                 <li>
-                    <button type='button' onclick="togglePhone()">INFO</button>
+                    <button type='button' onclick="togglePhone()">PHONE NUMBER INFO</button>
                     <p id='phone' style='display: none'>Phone numbers can be helpful in terms of security as you can
                         receive SMS messages for multi-factor authentication</p>
                 </li>
@@ -60,13 +62,15 @@
                 <hr>
                 <!--Password-->
                 <li>
-                    <button type='button' onclick="togglePassword()">INFO</button>
+                    <button type='button' onclick="togglePassword()">PASSWORD INFO</button>
                     <p id='password' style='display: none'>Passwords are a fundamental part of online security as they
                         can lock unwanted individuals from accessing an account. Passwords can range in strength,
                         depending on the characters used, complexity, and length. Generally, a strong password
                         should be at least 8 - 12 characters, unique (not used for other accounts), have a mixture of
                         both
                         uppercase and lowercase letters, contain numbers, and contain at least one special character.
+                        Although a minimum length of 8 - 12 characters is recommended, the longer the password, the more
+                        secure it generally will be, although it will also be harder to memorize.
                     </p>
                 </li>
                 <li>
@@ -76,7 +80,7 @@
                 <hr>
                 <!--MFA-->
                 <li>
-                    <button type='button' onclick="toggleMFA()">INFO</button>
+                    <button type='button' onclick="toggleMFA()">MFA INFO</button>
                     <p id='mfa' style='display: none'>Multi-factor authentication (MFA) is an additional security
                         measure that
                         can help keep unwanted intruders from accessing an account. It does this by making the owner of
@@ -132,7 +136,7 @@
                 <hr>
                 <!--Security Questions-->
                 <li>
-                    <button type='button' onclick="toggleSecure()">INFO</button>
+                    <button type='button' onclick="toggleSecure()">SECURITY QUESTION INFO</button>
                     <p id='secure' style='display: none'>Security questions are mainly beneficial to account security in
                         that they can help a user recover an account. Although they can be beneficial, they can also be
                         harmful, as if a user's information is readily found online, an attacker may be able to easily
